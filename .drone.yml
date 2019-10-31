@@ -13,5 +13,5 @@ steps:
   image: docker:dind
   privileged: true
   commands:
-   - docker kill $(docker ps --filter "ancestor=www" | awk '{ print $1 }' | tail +2)
+   - docker kill $(docker ps --filter "ancestor=www" | awk '{ print $1 }' | tail +2) || true
    - docker run -d www
